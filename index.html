@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Morning Brew</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#765f3d",
+                        "on-background": "#1a1c1a",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#e1c299",
+                        "tertiary-container": "#3a3b2a",
+                        "on-primary-fixed-variant": "#59422c",
+                        "inverse-on-surface": "#f2f1ee",
+                        "secondary-container": "#fbdbb0",
+                        "on-error-container": "#93000a",
+                        "surface": "#faf9f6",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e3e2e0",
+                        "inverse-primary": "#e1c1a4",
+                        "tertiary-fixed-dim": "#c8c8b0",
+                        "on-surface-variant": "#4e453d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#725a39",
+                        "surface-bright": "#faf9f6",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#725a42",
+                        "background": "#faf9f6",
+                        "surface-variant": "#e3e2e0",
+                        "secondary-fixed": "#feddb3",
+                        "outline": "#80756c",
+                        "surface-dim": "#dbdad7",
+                        "on-secondary-fixed": "#281801",
+                        "on-primary-container": "#bd9f83",
+                        "on-primary-fixed": "#291806",
+                        "tertiary": "#242516",
+                        "outline-variant": "#d2c4ba",
+                        "inverse-surface": "#2f312f",
+                        "primary-container": "#4b3621",
+                        "on-surface": "#1a1c1a",
+                        "surface-container": "#efeeeb",
+                        "on-tertiary-container": "#a4a58f",
+                        "tertiary-fixed": "#e4e4cc",
+                        "surface-container-high": "#e9e8e5",
+                        "primary": "#33210d",
+                        "on-secondary-fixed-variant": "#584324",
+                        "on-tertiary-fixed": "#1b1d0e",
+                        "surface-container-low": "#f4f3f1",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#e1c1a4",
+                        "on-tertiary-fixed-variant": "#474836",
+                        "primary-fixed": "#fedcbe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "container-max-width": "1120px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["EB Garamond"],
+                        "display": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-background/95 backdrop-blur-md bg-surface transition-all duration-300 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto h-20">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md text-primary hover:opacity-80 transition-opacity" href="#">
+                The Morning Brew
+            </a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#home">홈</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#menu">메뉴</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#location">오시는 길</a>
+</div>
+<!-- Primary Action -->
+<button class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary font-label-md text-label-md rounded-full hover:bg-primary/90 transition-colors cursor-pointer active:scale-95">
+                온라인 주문
+            </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden" id="home">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq4Rlfq2x_1_SlzaKryGDV1c3s_JBMJfsAGjiyIMrPh9hRM8qaFcFi7NXP7XUJzl6JKfaXhZjNdOsh7e4D7fO23rYKpYNzXvSVqTw0HAK3jTTs87uqcvq16RR5vioFKLuzDDYEjIusVubuoy4RP_nsKGYpvZh03a9tNVjRB70X5bk5S8H4QXS_Xcsd02qfauyTXIaxiRbyoCNpDiILqqm97_J1Sl0u8xNc-RWPliu71Z_ix6Y18E8pnFD_DOjUH-SxgCWSYsPxi5jr"/>
+<div class="absolute inset-0 bg-background/40"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto flex flex-col items-center gap-6">
+<span class="inline-block px-4 py-1 bg-surface-container/80 backdrop-blur-sm rounded-full font-label-sm text-label-sm text-primary uppercase tracking-wider">
+                    스페셜티 커피 로스터스
+                </span>
+<h1 class="font-display text-display text-primary">
+                    고요한 아침의 여유,<br/>
+<span class="italic font-light">The Morning Brew</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-4">
+                    정성껏 로스팅한 원두와 매일 아침 구워내는 신선한 베이커리. 바쁜 일상 속 작은 휴식을 선사합니다.
+                </p>
+<a class="mt-8 inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-label-md text-label-md rounded-full hover:bg-primary/90 transition-colors cursor-pointer group" href="#menu">
+                    메뉴 보기
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto" id="menu">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">정성을 담은 메뉴</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">최고의 재료로 정성을 다해 준비합니다. 자연의 맛을 그대로 담은 우리의 메뉴를 만나보세요.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Item -->
+<article class="md:col-span-8 group relative overflow-hidden rounded-xl bg-tertiary-fixed-dim/20 border border-outline-variant/30 flex flex-col md:flex-row h-full min-h-[400px]">
+<div class="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHgSxhU2wh0nn0dcDgygAmJoryv3L-9Hp62tllEuQLyiGa9rKMpIsuavOzOOMh9EJLMAty3A_dLHziPr0PTkjZqDzhxzviV1LazEVaXRETHNzR_3eH02GNS114ZFsGSLy6qzfqAMn3ybMqUVbc0KIAlNWTENSscO13Ftbih3plS5hBbw-WtCM1Q08mEJnLZ1K5ulgRqn4-GVO_GdTlC_CFUvSfjOvxU5lIivq6n4qkmDdUfFvqzd8AzIfKLaMpZt4pSi8FVGlzLt5a"/>
+</div>
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-surface">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm w-fit mb-4">시그니처</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">라떼 &amp; 크루아상 세트</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">벨벳처럼 부드러운 밀크폼이 올라간 시그니처 라떼와 프랑스산 버터의 풍미가 가득한 갓 구운 크루아상의 완벽한 조화.</p>
+<div class="flex items-center justify-between mt-auto pt-6 border-t border-outline-variant/30">
+<span class="font-label-md text-label-md text-primary">₩ 12,000</span>
+<button class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface border border-outline-variant/30 flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-container-low">
+<img alt="Pour Over Coffee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist overhead shot of a perfectly poured pour-over coffee sitting on a clean, light beige ceramic saucer. The lighting is bright and airy, casting soft shadows indicative of early morning light. The mood is serene and focused on the artisanal quality of the coffee." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6uWFg1RlLcUhu0CSdtaip4o7yux3oNGpu7SvFL2UwKy56Dd7PO3GGPJHr890HrSE13f7vD8lhBlUjbjnUPoCZN2HsBfIo1xEh-Vo_2NVYBNpqzePiLBoHD7TaJOCzvdiJYcPTX75d6SXDNQ0GgrxptCocCXU9elJWf1a1GyPIybCVdRAFKUMAHW-r2dMvLLVCa-_VQX03H_8_IajHDhHeqFVytVHwvhP5LHbmjIkh9DbQnjkKAMyNF2jsBjAmXDgzWEI5B-6bYqYk"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-lg">에티오피아 싱글 오리진</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-grow">꽃 향기와 베리의 산뜻한 산미가 특징인 스페셜티 드립 커피.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-md text-label-md text-primary">₩ 7,000</span>
+<button class="w-8 h-8 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface border border-outline-variant/30 flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-container-low">
+<img alt="Avocado Toast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up shot of a rustic, artisan sourdough toast topped with fresh, organic avocado and microgreens. The toast rests on a simple wooden board set against a cream-colored table. The lighting is natural and soft, highlighting the textures of the bread and the vibrant green of the avocado, conveying a healthy, slow-living aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIqqt1rqCQc03VFLbVsqly1lihBRs3VfsFKiJE-5Sqet_ESxRgEnVU6Hn_UGg7WsZmTdQU1pHlXpYy6Xtz01qFpSD77J1OP0POGk2Z9_EpF1YWUy23mtociW1G5DIGmtwBrEHIKaq0Tq6KSxtcUCPK8VkmjrtTBL4CP4h6BavzKT8r7pEFWHB7KLOqIj254-sKPwWQPhRVMgDu-bgVfQSulRXStbVz-wN3Z2qbK4vuUFelwomMCxvAMLGvb6NZUi31k3CwHLCd2_iQ"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-lg">아보카도 오픈 토스트</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-grow">유기농 사워도우 위에 신선한 아보카도와 수란을 곁들인 건강한 한 끼.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-md text-label-md text-primary">₩ 14,000</span>
+<button class="w-8 h-8 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 4 -->
+<article class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface border border-outline-variant/30 flex flex-col sm:flex-row h-full">
+<div class="w-full sm:w-2/5 h-48 sm:h-auto relative overflow-hidden bg-surface-container-low">
+<img alt="Matcha Latte" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist composition showing a chilled glass of matcha latte with clear ice cubes, condensation forming on the glass. The background is a soft, warm beige wall with minimal texture. The lighting is clean and bright, emphasizing the vibrant green of the matcha against the neutral background, creating a refreshing and calm mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQysKwqo5hx5bl1qe-es9z0C0oOD5VEQmdL32tpJDFEVnar4z3jeOcICQGzYgoYPHSqcnrH-M6lHtNzhyMo2Om6xq0pvNLdg4M3SypLhc1a9vzUa3sY2AMLnJouV6-6dQ4aeLLh8azp16J2geRG8SF7-tKcM4i9Xn2zhTFZZ-aqv9m5nMxt_kcZJOmGNFE8o2N17CeqXGNzcGTc_GFXtKgB_bqhWfbNK5ybr4bLFb7pVUpox498aXWGaCPBDMK4mjr1u7Dhsthke_r"/>
+</div>
+<div class="w-full sm:w-3/5 p-6 md:p-8 flex flex-col justify-center">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface rounded-full font-label-sm text-label-sm w-fit mb-3">시즌 메뉴</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3 text-lg">교토 말차 라떼</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-6 flex-grow">최상급 우지 말차를 사용하여 쌉싸름하면서도 깔끔한 뒷맛이 특징인 음료입니다. 오트밀크로 변경 가능합니다.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<span class="font-label-md text-label-md text-primary">₩ 6,500</span>
+<button class="w-8 h-8 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 5: Earl Grey Chiffon Cake -->
+<article class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface border border-outline-variant/30 flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-container-low">
+<img alt="얼그레이 쉬폰 케이크" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHZlbYykbtxuUB5RG_vO1YBpwzXSrZbHcpUjrGkMIhUIprMmmGU30GzcBaWHBWsFwnLRILFxUVhLVPQAbRawj5PhRgEeCRK4J4d0wJl0-TPLKJo44RlnjQUr9BF1QCIfCtG8At_R3rr4fbM2waqAmxD79ZV9ig6QAmAmJdR3z3MsC1xqyc4pnwoEZ19nY6Ukmk_KE9h5LdgZTrYGMh0suidd4sv_nYqMs8QpfBquAXt2PhjCWQpLP7-eLF5nOW3EQo3UajMFEvfKIL"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-lg">얼그레이 쉬폰 케이크</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-grow">은은한 홍차 향이 감도는 폭신한 식감의 쉬폰 케이크입니다.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-md text-label-md text-primary">₩ 7,500</span>
+<button class="w-8 h-8 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 6: Seasonal Fruit Tart -->
+<article class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface border border-outline-variant/30 flex flex-col sm:flex-row h-full">
+<div class="w-full sm:w-2/5 h-48 sm:h-auto relative overflow-hidden bg-surface-container-low">
+<img alt="계절 과일 타르트" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVrZtxMH_jnh1UZN-hpqm0tAiTaEcpk2pzGl5E-QljWfT8spbUUs9gZ41dtcs1iLP8Qj5hy8-5EOFh7tdoppju5Ud7GW04gjM75LxmLr8vlBifE4twHPqkKSnulkWhm5dHtfmy972LUikB0zlxF8Et-jIT3YWF29tVuuqx65Fu_IkZDfszu1XFc28qdQA4hYt7U-SKBFC33a0AIlw8c5hAsE2r3JpDhW1sYoSesYGXTvSs7WqKU80woPobFZeTYCwMaqi2Jo_l-R2I"/>
+</div>
+<div class="w-full sm:w-3/5 p-6 md:p-8 flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-3 text-lg">계절 과일 타르트</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-6 flex-grow">매일 아침 가장 신선한 과일을 듬뿍 올린 달콤한 타르트입니다.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<span class="font-label-md text-label-md text-primary">₩ 8,000</span>
+<button class="w-8 h-8 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</article></div>
+<div class="mt-12 flex justify-center">
+<button class="px-6 py-3 border border-outline text-primary font-label-md text-label-md rounded-full hover:bg-surface-container transition-colors">
+                    전체 메뉴 보기
+                </button>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div class="w-full h-[400px] md:h-[600px] rounded-xl overflow-hidden border border-outline-variant/30">
+<img alt="Cozy minimalist cafe corner with wooden armchair and coffee" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2hiEF3T0SDDYAw_kzjqXf1eDAUwog0jvyUbPYXwkY4Gp9hswP1rKx7TIPEb1njfadDlEb2r5sn9b0DM9VEPcsioMfwyfXOj9-Aqi1GqPEkg9bZubaj9FquAkvM21aej5LUXjHCmzKQ7TljtRuXnKnlrbEBGg53b1SoYxK9bxW8tn8p23tjhHGWiK_8AcDDuQRi4xuxqn2db7lJDrcTWr6-_RuEJ3d0LkoFzBA60fKOBxDb1ITkFbdrLg5UtT-PNWRx8O70ZVvJ2uk"/>
+</div>
+</div>
+</section><section class="py-24 bg-surface-container-low" id="location">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">찾아오시는 길</h2>
+<div class="space-y-8">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-secondary mt-1">location_on</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-1">위치</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        서울특별시 강남구 테헤란로 123<br/>
+                                        조용한 골목 안쪽, 벽돌 건물 1층
+                                    </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-secondary mt-1">schedule</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-1">영업시간</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        평일 : 08:00 - 20:00<br/>
+                                        주말 및 공휴일 : 10:00 - 21:00
+                                    </p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-secondary mt-1">call</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-1">연락처</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        02-1234-5678<br/>
+                                        hello@morningbrew.co.kr
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full h-[400px] rounded-xl overflow-hidden border border-outline-variant/30">
+<img alt="Map Location" class="w-full h-full object-cover" data-alt="A stylized, minimalist map illustration showing the location of a cafe in a city grid. The map uses a very restricted palette of cream, soft sand, and warm coffee brown to indicate streets and blocks. A small, elegant pin marks the cafe's location. The style is clean, vector-based, and integrates seamlessly with a light-mode UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCmI_JBGM9r6JW3kSILEuvat0R33sN7yjVCaUwinDWO6cOPnrKrV7E-aA7kM7UNGOgNoRqXfvPFhH6sW1bc-_h2bOfFLb20qAWcd3rg7qytEwkCeYqaQao-AgR23JCRGEPE2BMjPwL5HnRBj5nA7hjI5Ni_wo0k8r8FcZbOEqPfaCbhIsFSdacYE3VFX_S_7NBmWW0REIA9MAraJTCKcUwm-bSMnj-Cm9oGoJ8Xp3i-CXa6LZTJEFy3W6lOvt1aXVAxPhnLmc4KE6u"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary-fixed dark:bg-tertiary-container w-full px-margin-mobile md:px-margin-desktop py-16 flex flex-col items-center gap-8">
+<h2 class="font-headline-lg text-headline-lg text-primary">The Morning Brew</h2>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:opacity-80 transition-opacity" href="#">개인정보 처리방침</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:opacity-80 transition-opacity" href="#">이용약관</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:opacity-80 transition-opacity" href="#">접근성 안내</a>
+</div>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant text-center">
+            © 2024 The Morning Brew. 정성을 다해 준비합니다.
+        </p>
+</footer>
+</body></html>
+
